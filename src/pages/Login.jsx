@@ -23,7 +23,6 @@ import LoginForm from "../components/auth/loginForm";
 
 export default function Login() {
   const navigate = useNavigate();
-
   const reroute = (event) => {
     event.preventDefault();
     navigate("/register");
@@ -32,11 +31,9 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="flex w-[900px] h-[600px] rounded-xl shadow-lg overflow-hidden">
-        
         <div className="bg-img object-cover">
          <img src="src/assets/images/bg.png" alt="" />
         </div>
-        
         <LoginForm/>
       </div>
     </div>
