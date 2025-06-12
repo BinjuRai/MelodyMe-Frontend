@@ -24,7 +24,6 @@ export default function Login_text() {
         [name] 
     )
     
-    
     const handleName = (e) => setName(e.target.value) 
     const handleEmail = (e) => setEmail(e.target.value) 
     const handlePassword = (e) => setPassword(e.target.value) 
@@ -35,14 +34,13 @@ export default function Login_text() {
             setMessage("Congratulation")
         }
     }
-  return (
+    return (
     <div>
         {message}
         <input onChange={handleName}></input>
         <input onChange={handleEmail}></input>
         <input onChange={handlePassword}></input>
         <button onClick={handleSubmit}>Submit</button>
-
     </div>
   )
 }
