@@ -62,7 +62,6 @@ export default function RegisterForm() {
   //   }
   // },
   });
-
   return (
     <div className="w-1/2 bg-[#1e2246] text-white flex flex-col justify-center items-center p-8">
       <h1 className="text-3xl font-bold mb-6">MelodyMe</h1>
