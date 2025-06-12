@@ -13,13 +13,40 @@ const LoginForm = () => {
       email: "",
       password: "",
     },
-    validationSchema: Yup.object({
-      email: Yup.string().email("Invalid email").required("Required"),
-      password: Yup.string().min(6, "At least 6 characters").required("Required"),
-      onSubmit: (values) => {
-     mutate(values)
-    },
-    }),
+    // validationSchema: Yup.object({
+    //   email: Yup.string().email("Invalid email").required("Required"),
+    //   password: Yup.string().min(6, "At least 6 characters").required("Required"),
+    //   onSubmit: (values) => {
+    //   mutate(values, {
+    //     onSuccess: (response) => {
+    //       setMessage(response?.message || "Login successful!");
+    //       formik.resetForm();
+    //     },
+    //     onError: (error) => {
+    //       setMessage(error?.response?.data?.message || "Login failed. Please try again.");
+    //     },
+    //   });
+    // },
+    // }),
+  
+  validationSchema: Yup.object({
+    email: Yup.string().email("Invalid email").required("Required"),
+    password: Yup.string().min(6, "At least 6 characters").required("Required"),
+  }),
+  onSubmit: (values) => {
+    mutate(values, {
+      onSuccess: (response) => {
+        setMessage(response?.message || "Login successful!");
+        formik.resetForm();
+        navigate("/");
+      },
+      onError: (error) => {
+        setMessage(error?.response?.data?.message || "Login failed. Please try again.");
+      },
+    });
+  },
+});
+
     // onSubmit: async (values) => {
     //   try {
     //     const response = await axios.post("http://localhost:5050/api/login", values);
@@ -38,7 +65,7 @@ const LoginForm = () => {
     //   }
     // },
    
-  });
+
 
   return (
     <div className="w-1/2 bg-[#1e2246] text-white flex flex-col justify-center items-center p-8">
