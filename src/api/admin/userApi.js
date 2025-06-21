@@ -1,7 +1,7 @@
 import axios from "../api"
 
 export const getAllUserApi = () => {
-  const token = localStorage.getItem("token"); // or wherever you keep it
+  const token = localStorage.getItem("token"); 
   return axios.get("/admin/users", {
     headers: {
       Authorization: `Bearer ${token}`
@@ -21,7 +21,6 @@ export const updateUserApi = async ({ id, data }) => {
     const response = await axios.put(`/admin/users/${id}`, data);
     return response.data;
 };
-
 
 export const deleteUserApi = (id) => {
   const token = localStorage.getItem("token");

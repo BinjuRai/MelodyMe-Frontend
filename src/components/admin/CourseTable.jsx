@@ -4,8 +4,6 @@ import { getBackendImageUrl } from '../../utils/backend-image'
 import { Link } from 'react-router-dom'
 import DeleteModal from '../DeleteModel'
 
-
-
 export default function CourseTable() {
     const { courses, error, isPending } = useAdminCourse()
     const deleteCourseHook = useDeleteOneCourse()

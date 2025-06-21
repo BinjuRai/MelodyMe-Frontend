@@ -8,7 +8,7 @@ export const createOneCourseApi = (data) =>
             "Content-Type": "multipart/form-data"
         }
     }
-) // request using multer/file upload
+) 
 export const getOneCourseApi = (id) => 
     axios.get("/admin/courses/" + id)
 
@@ -19,8 +19,7 @@ export const updateOneCourseApi = (id, data) =>
         }
     }
 )
-// export const deleteOneCourseApi = (id) =>
-//     axios.delete("/admin/course/" + id)
+
 
 export const deleteOneCourseApi = (id) => {
     return axios.delete(`/admin/courses/${id}`); 
