@@ -3,32 +3,17 @@ import * as Yup from "yup";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
+import { useLoginUser } from "../../hooks/useLoginUser";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const [apiError, setApiError] = useState("");
-
+  const { mutate, data, isPending, error} = useLoginUser()
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
-    // validationSchema: Yup.object({
-    //   email: Yup.string().email("Invalid email").required("Required"),
-    //   password: Yup.string().min(6, "At least 6 characters").required("Required"),
-    //   onSubmit: (values) => {
-    //   mutate(values, {
-    //     onSuccess: (response) => {
-    //       setMessage(response?.message || "Login successful!");
-    //       formik.resetForm();
-    //     },
-    //     onError: (error) => {
-    //       setMessage(error?.response?.data?.message || "Login failed. Please try again.");
-    //     },
-    //   });
-    // },
-    // }),
-  
   validationSchema: Yup.object({
     email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string().min(6, "At least 6 characters").required("Required"),
@@ -46,26 +31,6 @@ const LoginForm = () => {
     });
   },
 });
-
-    // onSubmit: async (values) => {
-    //   try {
-    //     const response = await axios.post("http://localhost:5050/api/login", values);
-
-    //     if (response.data.success) {
-    //       // Optional: Save token
-    //       localStorage.setItem("token", response.data.token);
-
-    //       // Redirect or do something else
-    //       navigate("/dashboard"); // or any other route
-    //     } else {
-    //       setApiError(response.data.message || "Login failed");
-    //     }
-    //   } catch (err) {
-    //     setApiError(err.response?.data?.message || "Server error");
-    //   }
-    // },
-   
-
 
   return (
     <div className="w-1/2 bg-[#1e2246] text-white flex flex-col justify-center items-center p-8">
