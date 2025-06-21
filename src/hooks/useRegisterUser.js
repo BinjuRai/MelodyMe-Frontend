@@ -6,7 +6,7 @@ export const useRegisterUser =() => {
     const [data, setData] = useState(null)
 
     const register = async (formData) => {
-        //event handle function eg user button click
+        
         setIsLoading(true)
         setData(null)
         setError(null)

@@ -26,7 +26,7 @@ export const useCreateCourse = () => {
             toast.success("Course created")
             queryClient
                 .invalidateQueries(["admin_course"])
-            // refetch with the key
+            
         },
         onError: (err) => {
             toast.error(err.message || "Failed")
@@ -40,7 +40,7 @@ export const useGetOneCourse = (id) => {
             queryKey: ["admin_course_detail"],
             queryFn: () => getOneCourseService(id),
             enabled: !!id,
-            retry: false // default 3 retries
+            retry: false 
         }
     )
     const course = query.data?.data || {}
@@ -48,8 +48,7 @@ export const useGetOneCourse = (id) => {
         ...query, course
     }
 }
-// id = "123" -> !!id true
-// id = undefined, id = null -> !!id false
+
 export const useUpdateOneCourse = () => {
     const queryClient = useQueryClient()
     return useMutation(

@@ -31,7 +31,7 @@ export const useUpdateUser = (options = {}) => {
     mutationFn: updateUserService,
     onSuccess: (data) => {
       toast.success(data?.message || "User updated successfully");
-      queryClient.invalidateQueries(["admin_user"]); // Refetch after update
+      queryClient.invalidateQueries(["admin_user"]); 
       options?.onSuccess?.(data);
     },
     onError: (error) => {
@@ -47,7 +47,7 @@ export const useCreateUser = (options = {}) => {
     mutationFn: createUserService,
     onSuccess: (data) => {
       toast.success(data?.message || "User created successfully");
-      queryClient.invalidateQueries(["admin_user"]); // Refetch user list after create
+      queryClient.invalidateQueries(["admin_user"]); 
       options?.onSuccess?.(data);
     },
     onError: (error) => {
@@ -64,11 +64,11 @@ export const useDeleteUser = () => {
   return useMutation({
     mutationFn: deleteUserService,
     onSuccess: () => {
-      // Invalidate or refetch user list query after delete
+    
       queryClient.invalidateQueries(["users"]);
     },
     onError: (error) => {
-      // Optional: handle error globally or log
+      
       console.error("Delete failed:", error);
     }
   });

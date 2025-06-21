@@ -9,52 +9,8 @@ export default function AdminLayout() {
     const { user, logout } = useContext(AuthContext);
 
     return (
-      
-
-     
-
         <div className="flex h-screen">
-            {/* <aside className="w-64 bg-[#283256] shadow-lg p-4">
-                <h2 className="text-xl font-bold mb-6 text-cyan-50">Admin Panel</h2>
-                <nav className="flex flex-col space-y-3 ">
-                    <NavLink
-                        to="/admin/users"
-                        className={({ isActive }) =>
-                            `${
-                                isActive
-                                    ? "text-blue-200 font-semibold"
-                                    : "text-gray-700 hover:text-pink-400"
-                            } text-white block`
-                        }
-                    >
-                        Users
-                    </NavLink>
-                    <NavLink
-                        to="/admin/lesson"
-                        className={({ isActive }) =>
-                            `${
-                                isActive
-                                    ? "text-blue-200 font-semibold"
-                                    : "text-gray-700 hover:text-pink-400"
-                            } text-white block`
-                        }
-                    >
-                        Lesson
-                    </NavLink>
-                    <NavLink
-                        to="/admin/course"
-                        className={({ isActive }) =>
-                            `${
-                                isActive
-                                   ? "text-blue-200 font-semibold"
-                                    : "text-gray-700 hover:text-pink-400"
-                            } text-white block`
-                        }
-                    >
-                        Courses
-                    </NavLink>
-                </nav>
-            </aside> */}
+           
             <aside className="w-64 h-full bg-[#222740] shadow-xl p-6 ">
   <h2 className="text-2xl font-bold mb-8 text-[#EFD365] text-center tracking-wide">
     Admin Panel

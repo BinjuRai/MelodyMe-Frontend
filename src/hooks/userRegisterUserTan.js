@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 export const userRegisterUser =() => {
     return useMutation(
         {
-            mutationFn:registerUserService, //what function to run
+            mutationFn:registerUserService, 
             mutationKey: ['register'],
             onSuccess: (data) => {
             toast.success(data?.message || "Registration successful");
@@ -18,4 +18,3 @@ export const userRegisterUser =() => {
         }
     );
 };
-//mutationFn :{formData} => registerUserService(formData)
