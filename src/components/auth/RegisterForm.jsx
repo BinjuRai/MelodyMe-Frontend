@@ -45,22 +45,7 @@ export default function RegisterForm() {
         },
       });
     },
-  //   validationSchema,
-  // onSubmit: async (values, { setSubmitting }) => {
-  //   try {
-  //     setIsLoading(true);
-  //     const response = await axios.post('http://your-api/register', values);
-  //     if (response.status === 200 || response.status === 201) {
-  //       // Navigate to login
-  //       navigate("/login");
-  //     }
-  //   } catch (error) {
-  //     console.error("Registration error", error);
-  //   } finally {
-  //     setIsLoading(false);
-  //     setSubmitting(false);
-  //   }
-  // },
+
   });
   return (
     <div className="w-1/2 bg-[#1e2246] text-white flex flex-col justify-center items-center p-8">
