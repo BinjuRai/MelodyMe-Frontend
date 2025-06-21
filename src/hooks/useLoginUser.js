@@ -11,7 +11,7 @@ export const useLoginUser =() => {
         {
             mutationFn: loginUserService,
             mutationKey: ["login_key"],
-            onSuccess:(data)=> { //data -> body
+            onSuccess:(data)=> { 
                 login(data?.data, data?.token)
                 toast.success(data?.message || "Login Success")
             },

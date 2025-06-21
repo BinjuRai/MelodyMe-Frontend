@@ -17,16 +17,11 @@ const Header = () => {
           <NavLink  to="/" className="light">Contact us</NavLink>
           </div>
           <div className='flex gap-5 flex-row justify-center items-center'>
-          {/* <NavLink to="/register" className="light " >Register</NavLink>
-          <NavLink to="/login"
-           className='px-5 py-2  bg-gradient-to-r from-[#0a1229] to-[#4258b2e7] rounded-[18px] text-[#fff] hover:bg-gray-300' >
-            Login
-            </NavLink> */}
+        
               {
               !user && (
                 <>
-                {/* <NavLink to="/login">Login</NavLink>
-                <Link to="/register">Register</Link> */}
+               
                 <NavLink to="/register" className="light " >Register</NavLink>
           <NavLink to="/login"
            className='px-5 py-2  bg-gradient-to-r from-[#0a1229] to-[#4258b2e7] rounded-[18px] text-[#fff] hover:bg-gray-300' >

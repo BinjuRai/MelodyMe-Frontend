@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getAllLessonService } from "../../services/admin/lessonServices";
 import { useState } from "react";
-// GET request - useQuery
-// POST/PUT/DELET - useMutation
+
 
 export const useAdminLesson = () => {
     const [ pageNumber, setPageNumber ] = useState(1)
@@ -11,17 +10,17 @@ export const useAdminLesson = () => {
 
     const query = useQuery(
         {
-            queryKey: ["admin_lesson", pageNumber, pageSize, search], // key/variable to rerun function
+            queryKey: ["admin_lesson", pageNumber, pageSize, search], 
             queryFn: () => {
                 return getAllLessonService(
                     {
                         page: pageNumber,
                         limit: pageSize,
                         search: search
-                    } // params
+                    } 
                 )
             },
-            keepPreviousData: true // cache old data
+            keepPreviousData: true 
         }
     )
     const lessons = query.data?.data || []
